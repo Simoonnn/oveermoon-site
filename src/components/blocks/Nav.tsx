@@ -1,7 +1,8 @@
+'use client'
+
 import { useEffect, useState } from 'react'
 import { brand, navLinks, contact } from '../../data/content'
 import { Menu, Close } from '../ui/icons'
-import logoFull from '../../assets/logo-full.svg'
 
 /** Sticky top navigation with scroll state and a mobile overlay menu. */
 export function Nav() {
@@ -30,7 +31,7 @@ export function Nav() {
     >
       <div className="wrap flex h-[68px] items-center justify-between gap-6">
         <a href="#top" className="flex items-center text-ink" aria-label={`${brand} — на главную`}>
-          <img src={logoFull} alt={brand} className="h-[18px] w-auto" />
+          <img src="/logo-full.svg" alt={brand} className="h-[26px] w-auto" />
         </a>
 
         <nav className="hidden items-center gap-8 lg:flex">
@@ -63,7 +64,7 @@ export function Nav() {
       {open && (
         <div className="fixed inset-0 z-[60] flex flex-col bg-paper lg:hidden">
           <div className="wrap flex h-[68px] items-center justify-between">
-            <img src={logoFull} alt={brand} className="h-[18px] w-auto" />
+            <img src="/logo-full.svg" alt={brand} className="h-[26px] w-auto" />
             <button
               type="button"
               className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-hairline"

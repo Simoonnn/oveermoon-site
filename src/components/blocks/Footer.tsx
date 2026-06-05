@@ -1,5 +1,4 @@
 import { brand, footerTagline, footerLegal, footerColumns } from '../../data/content'
-import logoFull from '../../assets/logo-full.svg'
 
 /** B11 — Footer. Dark, with brand, nav groups, contacts and small print. */
 export function Footer() {
@@ -9,7 +8,7 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
           <div>
             <img
-              src={logoFull}
+              src="/logo-full.svg"
               alt={brand}
               className="h-[22px] w-auto"
               style={{ filter: 'brightness(0) invert(1)' }}

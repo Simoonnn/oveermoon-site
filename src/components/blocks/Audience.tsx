@@ -1,3 +1,5 @@
+'use client'
+
 import { useState } from 'react'
 import { audienceSection } from '../../data/content'
 import { Section } from '../ui/Section'

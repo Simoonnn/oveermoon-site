@@ -1,15 +1,9 @@
 /**
- * Site content for OVERMOON, adapted from OVERMOON.md.
+ * Site content for OVEERMOON, adapted from OVERMOON.md.
  * Copy follows "Пиши, сокращай": concrete facts, no filler, cut what is empty.
  * All user-facing text lives here so structure (components) stays separate
  * from words (copywriting). Edit text here, not inside components.
  */
-
-import salesImg from '../assets/products/sales.jpg'
-import supportImg from '../assets/products/support.jpg'
-import ragImg from '../assets/products/rag.jpg'
-import docsImg from '../assets/products/docs.jpg'
-import webImg from '../assets/products/web.jpg'
 
 export interface Link {
   label: string
@@ -61,12 +55,12 @@ export interface Segment {
 
 /* ---- contacts (placeholders — replace with real channels) ---- */
 export const contact = {
-  telegram: 'https://t.me/overmoon',
-  email: 'hello@overmoon.ai',
-  emailHref: 'mailto:hello@overmoon.ai?subject=Запрос аудита — OVERMOON',
+  telegram: 'https://t.me/oveermoon',
+  email: 'hello@oveermoon.ai',
+  emailHref: 'mailto:hello@oveermoon.ai?subject=Запрос аудита — OVEERMOON',
 }
 
-export const brand = 'OVERMOON'
+export const brand = 'OVEERMOON'
 
 export const navLinks: Link[] = [
   { label: 'Продукты', href: '#products' },
@@ -77,7 +71,7 @@ export const navLinks: Link[] = [
 
 /* B2 — Hero */
 export const hero = {
-  eyebrow: 'OVERMOON · ИИ-АВТОМАТИЗАЦИЯ',
+  eyebrow: 'OVEERMOON · ИИ-АВТОМАТИЗАЦИЯ',
   titleLines: ['ИИ для продаж,', 'поддержки', 'и документов.'],
   lead:
     'Клиенты получают ответ за секунды, больше заявок доходит до оплаты, рутину делает ИИ.',
@@ -102,7 +96,7 @@ export const integrations = [
 /* B4 — Quote band: one concrete idea, not a repeat of the hero */
 export const quote = {
   text: 'Клиент пишет в три ночи — ИИ отвечает за секунды. Не «ответим в рабочее время».',
-  by: 'Так работает OVERMOON',
+  by: 'Так работает OVEERMOON',
 }
 
 /* Problem grid */
@@ -163,7 +157,7 @@ export const productsSection = {
       title: 'Продажи и лидогенерация',
       body: 'Автообзвон квалифицирует базу и возвращает корзины. Email пишется под конкретного человека: что смотрел, что купил. Воронка не даёт лиду потеряться.',
       href: '#contact',
-      image: salesImg,
+      image: '/products/sales.jpg',
       wide: true,
       tools: ['Автообзвон', 'Email под клиента', 'Ведение по воронке'],
     },
@@ -172,28 +166,28 @@ export const productsSection = {
       title: 'Поддержка клиентов',
       body: 'Отвечает в чате на сайте, в Telegram и WhatsApp. Простое закрывает сам, сложное отдаёт оператору с историей диалога.',
       href: '#contact',
-      image: supportImg,
+      image: '/products/support.jpg',
     },
     {
       category: 'База знаний',
       title: 'RAG-ассистент',
       body: 'Отвечает по вашим регламентам и договорам, показывает источник. Не выдумывает, как обычный чат-бот. Режимы для клиентов и для сотрудников.',
       href: '#contact',
-      image: ragImg,
+      image: '/products/rag.jpg',
     },
     {
       category: 'Документооборот',
       title: 'Обработка документов',
       body: 'Распознаёт счета, договоры и накладные. Достаёт данные и кладёт в 1С или CRM. Без ручного ввода.',
       href: '#contact',
-      image: docsImg,
+      image: '/products/docs.jpg',
     },
     {
       category: 'Веб',
       title: 'Сайты',
       body: 'Сайт грузится за секунду и собирает заявки. На нём стоят ИИ-поддержка, формы и аналитика.',
       href: '#contact',
-      image: webImg,
+      image: '/products/web.jpg',
     },
   ] as Product[],
 }
@@ -287,7 +281,7 @@ export const finalCta = {
 
 /* B11 — Footer */
 export const footerTagline = 'ИИ-автоматизация продаж, поддержки и документооборота.'
-export const footerLegal = '© 2026 OVERMOON'
+export const footerLegal = '© 2026 OVEERMOON'
 export const footerColumns: { title: string; links: Link[] }[] = [
   {
     title: 'Продукты',

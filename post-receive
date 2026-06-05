@@ -1,0 +1,58 @@
+#!/bin/bash
+# git post-receive hook — auto-deploy OVEERMOON landing (Next.js, Docker-based).
+#
+# INSTALL on the production server (one-time):
+#   1. Create a bare repo:
+#        sudo mkdir -p /root/prod-oveermoon
+#        git init --bare /root/prod-oveermoon/oveermoon.git
+#   2. Work tree:
+#        sudo mkdir -p /root/prod-oveermoon/oveermoon
+#   3. Install this hook:
+#        cp /root/prod-oveermoon/oveermoon/post-receive \
+#           /root/prod-oveermoon/oveermoon.git/hooks/post-receive
+#        chmod +x /root/prod-oveermoon/oveermoon.git/hooks/post-receive
+#   4. Put secrets on the server (gitignored, not pushed):
+#        echo "TELEGRAM_BOT_TOKEN=..." >  /root/prod-oveermoon/oveermoon/.env.local
+#        echo "TELEGRAM_CHAT_ID=..."   >> /root/prod-oveermoon/oveermoon/.env.local
+#   5. From your laptop:
+#        git remote add prod ssh://root@SERVER/root/prod-oveermoon/oveermoon.git
+#        git push prod main
+
+set -euo pipefail
+
+GIT_DIR=/root/prod-oveermoon/oveermoon.git
+WORK_TREE=/root/prod-oveermoon/oveermoon
+LOGFILE="$GIT_DIR/oveermoon-deploy.log"
+DEPLOY_BRANCH="main"
+
+exec > >(tee -a "$LOGFILE") 2>&1
+
+echo
+echo "===== $(date) — post-receive started ====="
+
+while read -r oldrev newrev ref; do
+    echo "[INFO] ref: $ref"
+    echo "[INFO] newrev: $newrev"
+
+    branch=${ref#refs/heads/}
+    if [[ "$branch" != "$DEPLOY_BRANCH" ]]; then
+        echo "[INFO] push is NOT to $DEPLOY_BRANCH — skipping"
+        continue
+    fi
+
+    echo "[INFO] Checking out code into $WORK_TREE…"
+    mkdir -p "$WORK_TREE"
+    git --git-dir="$GIT_DIR" --work-tree="$WORK_TREE" checkout -f "$DEPLOY_BRANCH"
+
+    cd "$WORK_TREE"
+
+    if [[ ! -x ./deploy.sh ]]; then
+        echo "[ERROR] $WORK_TREE/deploy.sh not found or not executable"
+        exit 1
+    fi
+
+    echo "[INFO] Running deploy.sh (Docker compose build + up)…"
+    ./deploy.sh
+
+    echo "[SUCCESS] Deploy of $newrev finished at $(date)"
+done
