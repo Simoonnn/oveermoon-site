@@ -9,7 +9,7 @@ export function WhyUs() {
     <section id="why" className="relative overflow-hidden bg-ink py-[72px] text-white md:py-[140px]">
       <div className="glow-dark" aria-hidden="true" />
       <div className="wrap relative">
-        <div className="max-w-[26ch]">
+        <div>
           <Reveal>
             <Eyebrow variant="soft">{whySection.eyebrow}</Eyebrow>
           </Reveal>
@@ -18,7 +18,7 @@ export function WhyUs() {
           </Reveal>
         </div>
         <Reveal delay={120}>
-          <p className="lead mt-7 max-w-[52ch] text-white/70">{whySection.lead}</p>
+          <p className="lead mt-7 text-white/70">{whySection.lead}</p>
         </Reveal>
         <Reveal delay={180}>
           <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3">

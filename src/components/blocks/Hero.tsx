@@ -22,7 +22,7 @@ export function Hero() {
           </h1>
         </Reveal>
         <Reveal delay={150}>
-          <p className="lead mt-7 max-w-[46ch]">{hero.lead}</p>
+          <p className="lead mt-7">{hero.lead}</p>
         </Reveal>
         <Reveal delay={230}>
           <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-4">

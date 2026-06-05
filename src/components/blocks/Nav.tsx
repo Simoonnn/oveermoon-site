@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { brand, navLinks, contact } from '../../data/content'
-import { Mark, Menu, Close } from '../ui/icons'
+import { Menu, Close } from '../ui/icons'
+import logoFull from '../../assets/logo-full.svg'
 
 /** Sticky top navigation with scroll state and a mobile overlay menu. */
 export function Nav() {
@@ -28,9 +29,8 @@ export function Nav() {
       }`}
     >
       <div className="wrap flex h-[68px] items-center justify-between gap-6">
-        <a href="#top" className="flex items-center gap-2 text-ink" aria-label={`${brand} — на главную`}>
-          <Mark className="text-accent" />
-          <span className="text-[15px] font-medium tracking-[0.16em]">{brand}</span>
+        <a href="#top" className="flex items-center text-ink" aria-label={`${brand} — на главную`}>
+          <img src={logoFull} alt={brand} className="h-[18px] w-auto" />
         </a>
 
         <nav className="hidden items-center gap-8 lg:flex">
@@ -63,10 +63,7 @@ export function Nav() {
       {open && (
         <div className="fixed inset-0 z-[60] flex flex-col bg-paper lg:hidden">
           <div className="wrap flex h-[68px] items-center justify-between">
-            <span className="flex items-center gap-2 text-[15px] font-medium tracking-[0.16em]">
-              <Mark className="text-accent" />
-              {brand}
-            </span>
+            <img src={logoFull} alt={brand} className="h-[18px] w-auto" />
             <button
               type="button"
               className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-hairline"

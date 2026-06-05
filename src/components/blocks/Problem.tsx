@@ -7,7 +7,7 @@ import { Reveal } from '../ui/Reveal'
 export function Problem() {
   return (
     <Section id="problem">
-      <div className="max-w-[22ch]">
+      <div>
         <Reveal>
           <Eyebrow>{problemSection.eyebrow}</Eyebrow>
         </Reveal>

@@ -1,5 +1,5 @@
 import { brand, footerTagline, footerLegal, footerColumns } from '../../data/content'
-import { Mark } from '../ui/icons'
+import logoFull from '../../assets/logo-full.svg'
 
 /** B11 — Footer. Dark, with brand, nav groups, contacts and small print. */
 export function Footer() {
@@ -8,10 +8,12 @@ export function Footer() {
       <div className="wrap py-16 md:py-20">
         <div className="grid gap-12 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
           <div>
-            <div className="flex items-center gap-2">
-              <Mark className="text-accent-soft" />
-              <span className="text-[15px] font-medium tracking-[0.16em]">{brand}</span>
-            </div>
+            <img
+              src={logoFull}
+              alt={brand}
+              className="h-[22px] w-auto"
+              style={{ filter: 'brightness(0) invert(1)' }}
+            />
             <p className="mt-5 max-w-[34ch] leading-relaxed text-white/55">{footerTagline}</p>
           </div>
 

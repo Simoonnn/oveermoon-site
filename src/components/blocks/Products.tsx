@@ -14,7 +14,12 @@ function WideCard({ p }: { p: Product }) {
         href={p.href}
         className="card group grid h-full overflow-hidden rounded-media border border-hairline bg-paper-raised md:grid-cols-2"
       >
-        <div className={`media ${p.wash} min-h-[220px] md:min-h-full`} />
+        <div
+          className="media min-h-[220px] md:min-h-full"
+          style={{ backgroundImage: `url(${p.image})` }}
+          role="img"
+          aria-label={p.title}
+        />
         <div className="flex flex-col p-7 md:p-10">
           <div className="eyebrow">{p.category}</div>
           <h3 className="h3 mt-3 transition-colors group-hover:text-accent">{p.title}</h3>
@@ -46,7 +51,12 @@ function ProductCard({ p, i }: { p: Product; i: number }) {
         href={p.href}
         className="card group flex h-full flex-col overflow-hidden rounded-media border border-hairline bg-paper-raised"
       >
-        <div className={`media ${p.wash} aspect-[16/10]`} />
+        <div
+          className="media aspect-[16/10]"
+          style={{ backgroundImage: `url(${p.image})` }}
+          role="img"
+          aria-label={p.title}
+        />
         <div className="flex flex-1 flex-col p-6 md:p-8">
           <div className="eyebrow">{p.category}</div>
           <h3 className="h3 mt-3 transition-colors group-hover:text-accent">{p.title}</h3>
@@ -66,7 +76,7 @@ export function Products() {
   const [wide, ...rest] = productsSection.items
   return (
     <Section id="products">
-      <div className="max-w-[28ch]">
+      <div>
         <Reveal>
           <Eyebrow>{productsSection.eyebrow}</Eyebrow>
         </Reveal>

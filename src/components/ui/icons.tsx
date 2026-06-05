@@ -65,16 +65,3 @@ export function Chat(props: SVGProps<SVGSVGElement>) {
     </svg>
   )
 }
-
-/** OVERMOON crescent mark. */
-export function Mark(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
-      <mask id="overmoon-mark">
-        <rect width="24" height="24" fill="#fff" />
-        <circle cx="16.5" cy="9.5" r="8" fill="#000" />
-      </mask>
-      <circle cx="11" cy="12" r="9.5" fill="currentColor" mask="url(#overmoon-mark)" />
-    </svg>
-  )
-}

@@ -14,7 +14,7 @@ export function Marquee() {
           {items.map((it, i) => (
             <span
               key={`${it}-${i}`}
-              className="mx-7 whitespace-nowrap text-2xl font-medium text-ink/30 md:mx-12 md:text-3xl"
+              className="mx-7 whitespace-nowrap text-2xl font-medium text-ink/40 md:mx-12 md:text-3xl"
             >
               {it}
             </span>

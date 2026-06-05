@@ -7,7 +7,7 @@ import { Reveal } from '../ui/Reveal'
 export function Process() {
   return (
     <Section id="process" className="bg-paper-raised">
-      <div className="max-w-[28ch]">
+      <div>
         <Reveal>
           <Eyebrow>{processSection.eyebrow}</Eyebrow>
         </Reveal>

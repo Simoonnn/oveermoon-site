@@ -8,7 +8,7 @@ import { ArrowRight } from '../ui/icons'
 export function Pipeline() {
   return (
     <Section className="bg-paper-raised">
-      <div className="max-w-[34ch]">
+      <div>
         <Reveal>
           <Eyebrow>{pipeline.eyebrow}</Eyebrow>
         </Reveal>
@@ -26,8 +26,7 @@ export function Pipeline() {
             <Reveal delay={i * 90} className="flex-1">
               <div className="flex h-full flex-col rounded-media border border-hairline bg-paper p-6 md:p-7">
                 <div className="eyebrow">{s.kicker}</div>
-                <h3 className="h4 mt-3">{s.title}</h3>
-                <ul className="mt-4 space-y-2">
+                <ul className="mt-5 space-y-2.5">
                   {s.items.map((it) => (
                     <li key={it} className="flex items-start gap-2 text-muted">
                       <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />

@@ -11,7 +11,7 @@ export function Audience() {
 
   return (
     <Section id="audience">
-      <div className="max-w-[40ch]">
+      <div>
         <Reveal>
           <Eyebrow>{audienceSection.eyebrow}</Eyebrow>
         </Reveal>
