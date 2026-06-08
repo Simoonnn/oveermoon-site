@@ -21,7 +21,7 @@ services:
     ports:
       - "127.0.0.1:8030:3000"
     env_file:
-      - .env.local
+      - .env.prod
     environment:
       NODE_ENV: production
       NEXT_TELEMETRY_DISABLED: "1"

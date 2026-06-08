@@ -56,13 +56,12 @@ export interface Segment {
 /* ---- contacts (placeholders — replace with real channels) ---- */
 export const contact = {
   telegram: 'https://t.me/oveermoon',
-  email: 'hello@oveermoon.ai',
-  emailHref: 'mailto:hello@oveermoon.ai?subject=Запрос аудита — OVEERMOON',
 }
 
 export const brand = 'OVEERMOON'
 
 export const navLinks: Link[] = [
+  { label: 'Блог', href: 'https://oveermoon.ru/blog' },
   { label: 'Продукты', href: '#products' },
   { label: 'Как мы работаем', href: '#process' },
   { label: 'Кому подходит', href: '#audience' },
@@ -305,7 +304,6 @@ export const footerColumns: { title: string; links: Link[] }[] = [
     title: 'Контакты',
     links: [
       { label: 'Telegram', href: contact.telegram, external: true },
-      { label: contact.email, href: contact.emailHref },
     ],
   },
 ]
