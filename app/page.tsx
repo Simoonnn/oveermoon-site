@@ -8,7 +8,9 @@ import { Products } from '../src/components/blocks/Products'
 import { Process } from '../src/components/blocks/Process'
 import { WhyUs } from '../src/components/blocks/WhyUs'
 import { Audience } from '../src/components/blocks/Audience'
+import { Faq } from '../src/components/blocks/Faq'
 import { FinalCta } from '../src/components/blocks/FinalCta'
+import { faqSection } from '../src/data/content'
 import { Footer } from '../src/components/blocks/Footer'
 import { Fab } from '../src/components/blocks/Fab'
 
@@ -26,6 +28,12 @@ export default function Page() {
         <Process />
         <WhyUs />
         <Audience />
+        <Faq
+          eyebrow={faqSection.eyebrow}
+          title={faqSection.title}
+          lead={faqSection.lead}
+          items={faqSection.items}
+        />
         <FinalCta />
       </main>
       <Footer />

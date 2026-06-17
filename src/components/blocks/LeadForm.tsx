@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import type { FormEvent } from 'react'
+import { YM_COUNTER_ID } from '../../consts/config'
 
 type Status = 'idle' | 'submitting' | 'sent' | 'error'
 
@@ -42,6 +43,9 @@ export function LeadForm() {
         body: JSON.stringify(payload),
       })
       if (!res.ok) throw new Error('failed')
+      if (typeof window !== 'undefined' && typeof window.ym === 'function') {
+        window.ym(YM_COUNTER_ID, 'reachGoal', 'lead_form_sent')
+      }
       setStatus('sent')
     } catch {
       setStatus('error')
