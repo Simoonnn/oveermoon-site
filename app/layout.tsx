@@ -1,8 +1,28 @@
 import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
-import '@fontsource-variable/inter-tight/index.css'
+import localFont from 'next/font/local'
 import './globals.css'
 import { SITE_URL, SITE_NAME } from '../src/consts/config'
+
+// Body — PT Root UI Variable (Paratype, OFL-1.1), self-hosted
+const sans = localFont({
+  src: './fonts/pt-root-ui/pt-root-ui_vf.ttf',
+  weight: '300 700',
+  style: 'normal',
+  variable: '--font-pt',
+  display: 'swap',
+})
+
+// Headings — Martian Grotesk (Evil Martians, OFL-1.1), self-hosted
+const display = localFont({
+  src: [
+    { path: './fonts/martian-grotesk/MartianGrotesk-StdRg.woff2', weight: '400', style: 'normal' },
+    { path: './fonts/martian-grotesk/MartianGrotesk-StdMd.woff2', weight: '500', style: 'normal' },
+    { path: './fonts/martian-grotesk/MartianGrotesk-StdBd.woff2', weight: '700', style: 'normal' },
+  ],
+  variable: '--font-martian',
+  display: 'swap',
+})
 import { SiteJsonLd } from './structured-data'
 import { YandexMetrika } from './yandex-metrika'
 
@@ -35,7 +55,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="ru">
+    <html lang="ru" className={`${sans.variable} ${display.variable}`}>
       <body>
         <SiteJsonLd />
         {children}
