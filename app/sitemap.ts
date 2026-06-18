@@ -16,5 +16,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: SITE_URL, lastModified, changeFrequency: "weekly", priority: 1 },
     ...servicePages,
+    // Blog landing page. Individual articles live in the blog's own sitemap at
+    // /blog/sitemap.xml (advertised via robots.txt), so they are not duplicated here.
+    { url: `${SITE_URL}/blog`, lastModified, changeFrequency: "daily", priority: 0.8 },
   ];
 }
