@@ -13,7 +13,7 @@ export function Hero() {
           <Eyebrow>{hero.eyebrow}</Eyebrow>
         </Reveal>
         <Reveal delay={70}>
-          <h1 className="display mt-6 max-w-[15ch]">
+          <h1 className="display mt-6 max-w-[20ch]">
             {hero.titleLines.map((line) => (
               <span key={line} className="block">
                 {line}
@@ -21,10 +21,13 @@ export function Hero() {
             ))}
           </h1>
         </Reveal>
-        <Reveal delay={150}>
-          <p className="lead mt-7">{hero.lead}</p>
+        <Reveal delay={130}>
+          <h2 className="h3 mt-6 max-w-[30ch]">{hero.subhead}</h2>
         </Reveal>
-        <Reveal delay={230}>
+        <Reveal delay={190}>
+          <p className="lead mt-6">{hero.lead}</p>
+        </Reveal>
+        <Reveal delay={250}>
           <div className="mt-10 flex flex-wrap items-center gap-x-7 gap-y-4">
             <a href="#contact" className="btn btn-primary">
               {hero.primary}
